@@ -133,27 +133,6 @@ jobs:
             const repoRaw = normalizeRawRepoBase(repo);
             if (!repoRaw) return [];
 
-            try {
-              const repoIndex = await fetchJson(`${repoRaw}index.json`);
-              if (Array.isArray(repoIndex?.plugins)) {
-                return repoIndex.plugins
-                  .map((entry) => {
-                    const folder =
-                      typeof entry?.folder === "string" ? entry.folder : "";
-                    const manifest = normalizeManifest(entry?.manifest);
-                    if (!manifest) return null;
-                    return {
-                      repo,
-                      folder,
-                      manifest,
-                    };
-                  })
-                  .filter(Boolean);
-              }
-            } catch (error) {
-              console.warn(`[index] repo index.json unavailable for ${repoRaw}: ${error.message}`);
-            }
-
             const folders = parseLines(await fetchText(`${repoRaw}index.txt`));
             const entries = [];
 
