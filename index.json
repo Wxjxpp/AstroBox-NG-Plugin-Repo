@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-09T15:48:00.166Z",
+  "generatedAt": "2026-05-18T05:46:33.846Z",
   "source": "index.txt",
   "plugins": [
     {
@@ -49,17 +49,19 @@
       "manifest": {
         "name": "腕上漫画同步器",
         "icon": "icon.png",
-        "version": "1.8",
-        "description": "为腕上漫画同步自定义漫画源Cookie的工具",
+        "version": "1.9",
+        "description": "在AstroBox上管理腕上漫画",
         "author": "小鱼yuzifu",
         "website": "https://github.com/sf-yuzifu/bandcomic_AstroBox-Plugin",
         "entry": "bandcomic_astrobox_v2_plugin.wasm",
         "wasi_version": 2,
-        "api_level": 2,
+        "api_level": 3,
         "permissions": [
           "interconnect",
           "thirdpartyapp",
-          "device"
+          "device",
+          "register_interconnect_recv",
+          "dialog"
         ],
         "additional_files": []
       }
@@ -92,7 +94,7 @@
       "manifest": {
         "name": "简明天气同步器",
         "icon": "icon.png",
-        "version": "3.1.0",
+        "version": "3.1.2",
         "description": "在AstroBox中同步天气数据到简明天气",
         "author": "Zaona",
         "website": "https://weather.zaona.top/",
